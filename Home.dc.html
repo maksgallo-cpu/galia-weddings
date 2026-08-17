@@ -51,7 +51,7 @@
   .faq-icon{transition:transform .45s cubic-bezier(.2,.7,.2,1)}
   details[open] .faq-icon{transform:rotate(45deg)}
   .faq-item details[open] summary{color:#1E1B17}
-  *:has(> image-slot){max-height:640px;overflow:hidden}
+  *:has(> image-slot):not([style*="absolute"]){max-height:640px;overflow:hidden}
 </style>
 <script>
 (function(){

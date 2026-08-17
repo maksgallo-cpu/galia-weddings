@@ -46,7 +46,7 @@
   .nav-link{opacity:.72;transition:opacity .4s ease}
   .nav-link:hover{opacity:1}
   ::selection{background:#1E1B17;color:#F5F1EA}
-  *:has(> image-slot){max-height:640px;overflow:hidden}
+  *:has(> image-slot):not([style*="absolute"]){max-height:640px;overflow:hidden}
 </style>
 <script>
 (function(){

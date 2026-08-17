@@ -48,7 +48,7 @@
   .jcard{transition:transform .8s cubic-bezier(.2,.7,.2,1)}
   .jcard:hover{transform:translateY(-6px)}
   ::selection{background:#1E1B17;color:#F5F1EA}
-  *:has(> image-slot){max-height:640px;overflow:hidden}
+  *:has(> image-slot):not([style*="absolute"]){max-height:640px;overflow:hidden}
 </style>
 <script>
 (function(){
