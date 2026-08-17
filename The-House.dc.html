@@ -47,6 +47,23 @@
   .nav-link:hover{opacity:1}
   ::selection{background:#1E1B17;color:#F5F1EA}
 </style>
+<script>
+(function(){
+  function reveal(){
+    var els=document.querySelectorAll('[data-reveal]');
+    for(var i=0;i<els.length;i++){
+      var el=els[i], r=el.getBoundingClientRect();
+      if(r.top < window.innerHeight*0.94 && getComputedStyle(el).opacity==='0'){
+        el.style.opacity=1; el.style.transform='none';
+      }
+    }
+  }
+  window.addEventListener('scroll', reveal, {passive:true});
+  window.addEventListener('resize', reveal);
+  var t=setInterval(reveal,400);
+  setTimeout(function(){clearInterval(t);},10000);
+})();
+</script>
 </helmet>
 
 <div style="width:100%;overflow-x:hidden">
