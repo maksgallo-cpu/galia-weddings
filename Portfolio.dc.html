@@ -49,6 +49,8 @@
   .proj:hover{transform:scale(1.015)}
   ::selection{background:#1E1B17;color:#F5F1EA}
   *:has(> image-slot):not([style*="absolute"]){max-height:640px;overflow:hidden}
+  [style*="grid-template-columns"] > *{min-width:0}
+  [style*="display:grid"] > *,[style*="display: grid"] > *{min-width:0}
 </style>
 <script>
 (function(){

@@ -36,6 +36,8 @@
     header[data-nav] nav{gap:10px 16px !important}
   }
   *:has(> image-slot):not([style*="absolute"]){max-height:640px;overflow:hidden}
+  [style*="grid-template-columns"] > *{min-width:0}
+  [style*="display:grid"] > *,[style*="display: grid"] > *{min-width:0}
 </style>
 <script>
 (function(){

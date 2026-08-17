@@ -52,6 +52,8 @@
   details[open] .faq-icon{transform:rotate(45deg)}
   .faq-item details[open] summary{color:#1E1B17}
   *:has(> image-slot):not([style*="absolute"]){max-height:640px;overflow:hidden}
+  [style*="grid-template-columns"] > *{min-width:0}
+  [style*="display:grid"] > *,[style*="display: grid"] > *{min-width:0}
 </style>
 <script>
 (function(){
