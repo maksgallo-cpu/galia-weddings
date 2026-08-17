@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:#F5F1EA;color:#1E1B17;font-family:'EB Garamond',Georgia,serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  html,body{overflow-x:hidden}
+  @media (max-width:980px){
+    header[data-nav]{flex-wrap:wrap;row-gap:14px;padding-top:16px !important;padding-bottom:16px !important}
+    header[data-nav] nav{order:3;width:100%;gap:12px 20px !important;justify-content:center}
+    header[data-nav] > div:last-child{margin-left:0 !important}
+    [style*="grid-template-columns: 1fr 1.05fr"],
+    [style*="grid-template-columns: 1fr 1.1fr"],
+    [style*="grid-template-columns: 1.05fr 1fr"],
+    [style*="grid-template-columns: 1.3fr 1fr"],
+    [style*="grid-template-columns: 80px 1fr 1.4fr"]{grid-template-columns:1fr !important}
+    [style*="grid-template-columns: repeat(4, 1fr)"],
+    [style*="grid-template-columns: repeat(3, 1fr)"]{grid-template-columns:repeat(2,1fr) !important}
+    [style*="min-height: 420px"]{min-height:320px !important}
+  }
+  @media (max-width:640px){
+    [style*="grid-template-columns: 1fr 1fr"],
+    [style*="grid-template-columns: repeat(3, 1fr)"],
+    [style*="grid-template-columns: repeat(4, 1fr)"],
+    [style*="grid-template-columns: 1.4fr 1fr 1fr"]{grid-template-columns:1fr !important}
+    [style*="min-height: 420px"]{min-height:260px !important}
+    header[data-nav] nav{gap:10px 16px !important}
+  }
+  a{color:inherit;text-decoration:none}
+  a.link-underline{position:relative}
+  a.link-underline::after{content:'';position:absolute;left:0;bottom:-3px;width:100%;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+  a.link-underline:hover::after{transform:scaleX(1)}
+  .nav-link{opacity:.72;transition:opacity .4s ease}
+  .nav-link:hover{opacity:1}
+  ::selection{background:#1E1B17;color:#F5F1EA}
+</style>
+</helmet>
+
+<div style="width:100%;overflow-x:hidden">
+
+  <header data-nav style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:22px 5vw;background:rgba(245,241,234,0.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(30,27,23,0.12)">
+    <a href="Home.dc.html" style="display:flex;align-items:center"><img src="uploads/galia-logo-dark.png" alt="Galia — Wedding Planner" style="height:38px;width:auto;display:block"></a>
+    <nav style="display:flex;gap:30px;align-items:center;font-size:12.5px;letter-spacing:0.2em;text-transform:uppercase;flex-wrap:wrap;justify-content:center">
+      <a class="nav-link" href="Home.dc.html" data-fr="Accueil">Home</a>
+      <a class="nav-link" href="The-House.dc.html" data-fr="La Maison">The House</a>
+      <a class="nav-link" href="Services.dc.html" style="opacity:1" data-fr="Services">Services</a>
+      <a class="nav-link" href="Portfolio.dc.html" data-fr="Portfolio">Portfolio</a>
+      <a class="nav-link" href="The-Experience.dc.html" data-fr="L&#39;Exp&eacute;rience">The Experience</a>
+      <a class="nav-link" href="Journal.dc.html" data-fr="Journal">Journal</a>
+      <a class="nav-link" href="Inquire.dc.html" data-fr="Contact">Inquire</a>
+    </nav>
+    <div style="display:flex;gap:8px;align-items:center;font-size:12px;letter-spacing:0.16em;margin-left:36px;flex-shrink:0">
+      <span onClick="{{ setEn }}" style="{{ enStyle }}">EN</span>
+      <span style="opacity:.35">/</span>
+      <span onClick="{{ setFr }}" style="{{ frStyle }}">FR</span>
+    </div>
+  </header>
+
+  <section style="padding:clamp(90px,15vh,170px) 6vw clamp(50px,7vh,90px);max-width:1200px;margin:0 auto;text-align:center">
+    <div data-reveal style="opacity:0;transform:translateY(18px);transition:opacity 1.3s ease,transform 1.3s ease">
+      <div style="font-size:12px;letter-spacing:0.32em;text-transform:uppercase;color:#8A8175;margin-bottom:32px" data-fr="Exp&eacute;riences">Services</div>
+      <h1 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(38px,6vw,92px);line-height:1.04;margin-bottom:34px" data-fr="Quatre fa&ccedil;ons d&rsquo;&ecirc;tre<br><span style=&quot;font-style:italic&quot;>accompagn&eacute;s.</span>">Four ways to be<br><span style="font-style:italic">accompanied.</span></h1>
+      <p style="font-size:clamp(17px,1.5vw,21px);line-height:1.75;color:#3A352E;max-width:54ch;margin:0 auto" data-fr="Non pas des formules, mais des niveaux d&rsquo;accompagnement &mdash; chacun con&ccedil;u autour du couple, du lieu et de l&rsquo;histoire &agrave; raconter.">Not packages, but levels of accompaniment &mdash; each shaped around the couple, the place, and the story to be told.</p>
+    </div>
+  </section>
+
+  <section style="max-width:1600px;margin:0 auto;padding:0 6vw clamp(90px,12vh,150px);display:flex;flex-direction:column;gap:clamp(70px,10vh,140px)">
+
+    <div data-reveal style="opacity:0;transform:translateY(18px);transition:opacity 1.3s ease,transform 1.3s ease;position:relative;border:1px solid rgba(30,27,23,0.18);background:#EFEAE0">
+      <div style="display:grid;grid-template-columns:1fr 1.05fr">
+        <div style="position:relative;min-height:420px;overflow:hidden"><image-slot id="svc-1" src="uploads/jacob-diehl-LD71wOmrTqY-unsplash.jpg" shape="rect" fit="cover" placeholder="Paris Celebrations"></image-slot></div>
+        <div style="padding:clamp(40px,4.5vw,72px)">
+          <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:22px"><span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:26px;color:#8A8175">01</span><div style="font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#8A8175" data-fr="Paris &amp; sa r&eacute;gion">Paris &amp; its region</div></div>
+          <h2 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(30px,3.6vw,52px);line-height:1.08;margin-bottom:24px" data-fr="C&eacute;l&eacute;brations &agrave; Paris">Paris Celebrations</h2>
+          <p style="font-size:clamp(16px,1.35vw,19px);line-height:1.8;color:#3A352E;max-width:50ch;margin-bottom:26px" data-fr="Mariages &agrave; Paris et dans sa r&eacute;gion, pris en charge dans leur int&eacute;gralit&eacute; : conception, direction artistique, lieu, prestataires, sc&eacute;nographie, budget, production et coordination le jour J.">Weddings in Paris and its surrounding region, taken in hand entirely: conception, art direction, venue, suppliers, scenography, budget, production and day-of coordination.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:10px">
+            <span style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#3A352E;border:1px solid rgba(30,27,23,0.2);padding:8px 14px" data-fr="Direction artistique">Art direction</span>
+            <span style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#3A352E;border:1px solid rgba(30,27,23,0.2);padding:8px 14px" data-fr="Sc&eacute;nographie">Scenography</span>
+            <span style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#3A352E;border:1px solid rgba(30,27,23,0.2);padding:8px 14px" data-fr="Production">Production</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div data-reveal style="opacity:0;transform:translateY(18px);transition:opacity 1.3s ease,transform 1.3s ease;position:relative;border:1px solid rgba(30,27,23,0.18);background:#EFEAE0">
+      <div style="display:grid;grid-template-columns:1fr 1.05fr">
+        <div style="position:relative;min-height:420px;overflow:hidden"><image-slot id="svc-2" src="https://images.unsplash.com/photo-1617724975854-70b5d0cedb0a?fm=jpg&q=80&w=1600&auto=format&fit=crop&sat=-100" credit="Asdrubal Luna" credit-href="https://unsplash.com/@infectedluna" shape="rect" fit="cover" placeholder="French Destinations"></image-slot></div>
+        <div style="padding:clamp(40px,4.5vw,72px)">
+          <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:22px"><span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:26px;color:#8A8175">02</span><div style="font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#8A8175" data-fr="C&eacute;l&eacute;brer en France">Celebrating in France</div></div>
+          <h2 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(30px,3.6vw,52px);line-height:1.08;margin-bottom:24px" data-fr="Destinations Fran&ccedil;aises">French Destinations</h2>
+          <p style="font-size:clamp(16px,1.35vw,19px);line-height:1.8;color:#3A352E;max-width:50ch;margin-bottom:26px" data-fr="Pour les couples internationaux qui c&eacute;l&egrave;brent en France. Nous orchestrons la logistique, l&rsquo;h&eacute;bergement, les d&eacute;placements et l&rsquo;exp&eacute;rience des invit&eacute;s, du premier accueil au dernier au revoir.">For international couples celebrating in France. We orchestrate logistics, accommodation, travel and the guest experience, from first welcome to final farewell.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:10px">
+            <span style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#3A352E;border:1px solid rgba(30,27,23,0.2);padding:8px 14px" data-fr="Logistique">Logistics</span>
+            <span style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#3A352E;border:1px solid rgba(30,27,23,0.2);padding:8px 14px" data-fr="H&eacute;bergement">Accommodation</span>
+            <span style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#3A352E;border:1px solid rgba(30,27,23,0.2);padding:8px 14px" data-fr="Exp&eacute;rience des invit&eacute;s">Guest experience</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div data-reveal style="opacity:0;transform:translateY(18px);transition:opacity 1.3s ease,transform 1.3s ease;position:relative;border:1px solid rgba(30,27,23,0.18);background:#EFEAE0">
+      <div style="display:grid;grid-template-columns:1fr 1.05fr">
+        <div style="position:relative;min-height:420px;overflow:hidden"><image-slot id="svc-3" src="uploads/kyle-sudu-rlbm9reGoCk-unsplash.jpg" shape="rect" fit="cover" placeholder="Destination Celebrations"></image-slot></div>
+        <div style="padding:clamp(40px,4.5vw,72px)">
+          <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:22px"><span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:26px;color:#8A8175">03</span><div style="font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#8A8175" data-fr="Au-del&agrave; de la France">Beyond France</div></div>
+          <h2 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(30px,3.6vw,52px);line-height:1.08;margin-bottom:24px" data-fr="C&eacute;l&eacute;brations Destination">Destination Celebrations</h2>
+          <p style="font-size:clamp(16px,1.35vw,19px);line-height:1.8;color:#3A352E;max-width:50ch;margin-bottom:26px" data-fr="Mariages hors de France &mdash; Europe, Moyen-Orient et ailleurs. GALIA constitue une &eacute;quipe locale d&rsquo;exception tout en gardant une direction artistique parfaitement coh&eacute;rente.">Weddings beyond France &mdash; Europe, the Middle East and elsewhere. GALIA assembles a local team of exception while keeping a perfectly coherent art direction.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:10px">
+            <span style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#3A352E;border:1px solid rgba(30,27,23,0.2);padding:8px 14px" data-fr="&Eacute;quipe locale">Local team</span>
+            <span style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#3A352E;border:1px solid rgba(30,27,23,0.2);padding:8px 14px" data-fr="Direction coh&eacute;rente">Coherent direction</span>
+            <span style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#3A352E;border:1px solid rgba(30,27,23,0.2);padding:8px 14px">Worldwide</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div data-reveal style="opacity:0;transform:translateY(18px);transition:opacity 1.3s ease,transform 1.3s ease;position:relative;border:1px solid rgba(30,27,23,0.18);background:#EFEAE0">
+      <div style="display:grid;grid-template-columns:1fr 1.05fr">
+        <div style="position:relative;min-height:420px;overflow:hidden"><image-slot id="svc-4" src="uploads/550park-luxury-wedding-films-KtpH0t_Ppj0-unsplash.jpg" shape="rect" fit="cover" placeholder="The Wedding Week"></image-slot></div>
+        <div style="padding:clamp(40px,4.5vw,72px)">
+          <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:22px"><span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:26px;color:#8A8175">04</span><div style="font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#8A8175" data-fr="L&rsquo;offre la plus exclusive">The most exclusive offering</div></div>
+          <h2 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(32px,3.8vw,56px);line-height:1.06;margin-bottom:24px" data-fr="La Semaine de Mariage">The Wedding Week</h2>
+          <p style="font-size:clamp(16px,1.35vw,19px);line-height:1.8;color:#3A352E;max-width:52ch;margin-bottom:24px" data-fr="GALIA orchestre l&rsquo;int&eacute;gralit&eacute; du s&eacute;jour : h&ocirc;tels, transferts, welcome gifts, d&icirc;ner de bienvenue, activit&eacute;s, c&eacute;r&eacute;monie, r&eacute;ception, after party et brunch de cl&ocirc;ture.">GALIA orchestrates the entire stay: hotels, transfers, welcome gifts, welcome dinner, activities, ceremony, reception, after party and closing brunch.</p>
+          <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(20px,2vw,28px);line-height:1.35;color:#1E1B17" data-fr="De l&rsquo;arriv&eacute;e aux adieux, chaque instant est pens&eacute;.">From arrival to farewell, every moment is considered.</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section style="background:#1E1B17;color:#F5F1EA;padding:clamp(80px,13vh,150px) 6vw;text-align:center">
+    <div data-reveal style="opacity:0;transform:translateY(18px);transition:opacity 1.3s ease,transform 1.3s ease">
+      <p style="font-size:12px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(245,241,234,0.55);margin-bottom:28px" data-fr="S&eacute;lectif">Selective</p>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(26px,3.6vw,50px);line-height:1.22;max-width:26ch;margin:0 auto 36px" data-fr="Nous n&rsquo;acceptons qu&rsquo;un nombre limit&eacute; de c&eacute;l&eacute;brations chaque ann&eacute;e, afin de rester profond&eacute;ment impliqu&eacute;s dans chaque projet.">We take on a limited number of celebrations each year, allowing us to remain deeply involved in every project.</h2>
+      <a href="Inquire.dc.html" style="display:inline-block;padding:18px 46px;border:1px solid rgba(245,241,234,0.6);font-size:12px;letter-spacing:0.28em;text-transform:uppercase;color:#F5F1EA;transition:background .5s ease,color .5s ease" style-hover="background:#F5F1EA;color:#1E1B17" data-fr="Faire une demande">Inquire</a>
+    </div>
+  </section>
+
+  <footer style="background:#1E1B17;color:#F5F1EA;padding:clamp(70px,9vw,110px) 6vw 40px;border-top:1px solid rgba(245,241,234,0.16)">
+    <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px;max-width:1500px;margin:0 auto;padding-bottom:60px;border-bottom:1px solid rgba(245,241,234,0.16)">
+      <div>
+        <img src="uploads/galia-logo-white.png" alt="Galia — Wedding Planner" style="height:60px;width:auto;display:block;margin-bottom:26px">
+        <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(19px,1.8vw,26px);line-height:1.4;max-width:22ch;color:rgba(245,241,234,0.9)" data-fr="Nous n&rsquo;organisons pas des mariages. Nous composons des exp&eacute;riences.">We don&rsquo;t plan weddings. We curate experiences.</p>
+      </div>
+      <div>
+        <div style="font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:rgba(245,241,234,0.55);margin-bottom:22px" data-fr="Explorer">Explore</div>
+        <div style="display:flex;flex-direction:column;gap:13px;font-size:15px">
+          <a class="link-underline" href="The-House.dc.html" data-fr="La Maison">The House</a>
+          <a class="link-underline" href="Services.dc.html" data-fr="Services">Services</a>
+          <a class="link-underline" href="Portfolio.dc.html" data-fr="Portfolio">Portfolio</a>
+          <a class="link-underline" href="The-Experience.dc.html" data-fr="L&rsquo;Exp&eacute;rience">The Experience</a>
+          <a class="link-underline" href="Journal.dc.html" data-fr="Journal">Journal</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:rgba(245,241,234,0.55);margin-bottom:22px" data-fr="Maison">Studio</div>
+        <div style="display:flex;flex-direction:column;gap:13px;font-size:15px;color:rgba(245,241,234,0.9)">
+          <span>Paris &middot; France</span>
+          <span data-fr="Europe &middot; Moyen-Orient &middot; International">Europe &middot; Middle East &middot; Worldwide</span>
+          <a class="link-underline" href="Inquire.dc.html" style="margin-top:6px" data-fr="Faire une demande">Inquire</a>
+          <a class="link-underline" href="#" data-fr="Instagram">Instagram</a>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;max-width:1500px;margin:22px auto 0;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(245,241,234,0.5)">
+      <span>&copy; 2026 GALIA Weddings</span>
+      <span data-fr="Design &amp; direction artistique de mariages de luxe">Luxury Wedding Design &amp; Creative Direction</span>
+      <a class="link-underline" href="Credits.dc.html" data-fr="Cr&eacute;dits">Credits</a>
+      <a class="link-underline" href="https://www.adrigal.website" target="_blank" rel="noopener">Made by Adrigal</a>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { lang: 'fr' };
+  componentDidMount(){
+    let stored = 'en';
+    try { stored = localStorage.getItem('galia-lang') || 'fr'; } catch(e){}
+    this.applyLang(stored);
+    if (stored !== this.state.lang) this.setState({ lang: stored });
+    this.initReveal();
+  }
+  componentDidUpdate(){ this.applyLang(this.state.lang); }
+  applyLang(lang){
+    document.querySelectorAll('[data-fr]').forEach(el => {
+      if (el.dataset.en === undefined) el.dataset.en = el.innerHTML;
+      el.innerHTML = (lang === 'fr') ? el.dataset.fr : el.dataset.en;
+    });
+    try { document.documentElement.lang = lang; } catch(e){}
+  }
+  setLang(lang){
+    try { localStorage.setItem('galia-lang', lang); } catch(e){}
+    this.setState({ lang });
+  }
+  initReveal(){
+    const els = document.querySelectorAll('[data-reveal]');
+    if (!('IntersectionObserver' in window)) { els.forEach(el => { el.style.opacity = 1; el.style.transform = 'none'; }); return; }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = 1; e.target.style.transform = 'none'; io.unobserve(e.target); } });
+    }, { threshold: 0.08, rootMargin: '0px 0px -6% 0px' });
+    els.forEach(el => io.observe(el));
+  }
+  renderVals(){
+    const lang = this.state.lang;
+    return {
+      setEn: () => this.setLang('en'),
+      setFr: () => this.setLang('fr'),
+      enStyle: { cursor: 'pointer', opacity: lang === 'en' ? 1 : 0.4, transition: 'opacity .3s ease' },
+      frStyle: { cursor: 'pointer', opacity: lang === 'fr' ? 1 : 0.4, transition: 'opacity .3s ease' },
+    };
+  }
+}
+</script>
+</body>
+</html>

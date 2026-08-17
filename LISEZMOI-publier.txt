@@ -1,0 +1,125 @@
+╔════════════════════════════════════════════════════════════════╗
+║   PUBLIER LE SITE GALIA  —  GitHub → Netlify                      ║
+║   Guide pas à pas, expliqué très simplement.                     ║
+╚════════════════════════════════════════════════════════════════╝
+
+Tu vas mettre le site dans une "boîte" en ligne (GitHub), puis
+brancher une machine (Netlify) qui lit cette boîte et affiche le
+site sur internet. Une fois branché, à chaque fois que tu changes
+la boîte, le site se met à jour tout seul. Magique. ✨
+
+Tu auras besoin de 2 comptes GRATUITS :
+  • un compte GitHub  →  https://github.com
+  • un compte Netlify →  https://netlify.com
+Crée-les d'abord (bouton "Sign up"). Tu peux te connecter à Netlify
+en cliquant "Sign up with GitHub" : c'est le plus simple.
+
+
+────────────────────────────────────────────────────────────────
+ÉTAPE 0 — Ce que tu as sous la main
+────────────────────────────────────────────────────────────────
+Ce dossier "Galia Deploy1" contient TOUT le site. Ne renomme pas
+les fichiers à l'intérieur, ne les sépare pas. On va envoyer ce
+dossier entier tel quel.
+
+Le fichier "index.html" est la porte d'entrée : quand quelqu'un
+arrive sur le site, il est envoyé automatiquement vers la page
+d'accueil (Home). Ne le supprime pas.
+
+
+────────────────────────────────────────────────────────────────
+ÉTAPE 1 — Créer la "boîte" sur GitHub (le dépôt)
+────────────────────────────────────────────────────────────────
+1. Va sur https://github.com et connecte-toi.
+2. En haut à droite, clique le "+"  →  "New repository".
+3. Repository name :  galia-site   (tout en minuscules, sans espace)
+4. Laisse "Public" coché (ou "Private", ça marche aussi).
+5. NE COCHE RIEN d'autre (pas de README, pas de .gitignore).
+6. Clique le bouton vert "Create repository".
+
+Tu arrives sur une page presque vide : c'est ta boîte, prête à
+recevoir les fichiers.
+
+
+────────────────────────────────────────────────────────────────
+ÉTAPE 2 — Mettre les fichiers dans la boîte (le plus simple)
+────────────────────────────────────────────────────────────────
+La façon la plus facile = glisser-déposer, sans rien installer.
+
+1. Sur la page de ta boîte GitHub, cherche le lien :
+   "uploading an existing file"  (au milieu de la page)
+   … et clique dessus.
+2. Ouvre le dossier "Galia Deploy1" sur ton ordinateur.
+3. Sélectionne TOUT ce qu'il y a DEDANS
+   (les fichiers .html, .js, ET le dossier "uploads")
+   → astuce : Ctrl+A (Windows) ou Cmd+A (Mac) pour tout choisir.
+4. Glisse-dépose la sélection dans la zone de GitHub.
+
+   ⚠️ IMPORTANT : glisse le CONTENU du dossier, pas le dossier
+   "Galia Deploy1" lui-même. Le fichier "index.html" doit se
+   retrouver tout en haut, à la racine.
+
+5. Attends que tout soit bien chargé (le dossier uploads avec les
+   images peut prendre quelques secondes).
+6. En bas, clique le bouton vert "Commit changes".
+
+Voilà, tes fichiers sont en ligne dans la boîte. 🎉
+
+
+────────────────────────────────────────────────────────────────
+ÉTAPE 3 — Brancher Netlify sur la boîte
+────────────────────────────────────────────────────────────────
+1. Va sur https://app.netlify.com et connecte-toi
+   (idéalement "Log in with GitHub").
+2. Clique "Add new site"  →  "Import an existing project".
+3. Choisis "Deploy with GitHub" (ou "GitHub").
+4. Netlify demande l'autorisation de voir tes boîtes → accepte.
+5. Dans la liste, clique ta boîte :  galia-site
+6. Netlify pose quelques questions. Tu peux TOUT laisser vide :
+       • Branch to deploy  : main   (laisse tel quel)
+       • Build command     : (laisse VIDE)
+       • Publish directory  : (laisse VIDE)
+   Notre site n'a pas besoin de "construction", ce sont juste des
+   fichiers à afficher.
+7. Clique "Deploy" (ou "Deploy galia-site").
+
+Netlify réfléchit ~30 secondes puis affiche "Published".
+
+
+────────────────────────────────────────────────────────────────
+ÉTAPE 4 — Voir ton site en ligne
+────────────────────────────────────────────────────────────────
+Netlify te donne une adresse du style :
+   https://un-nom-rigolo-1234.netlify.app
+
+Clique dessus : ton site est en ligne, visible par le monde entier.
+
+Pour une adresse plus jolie :
+   Site configuration → "Change site name"
+   → tape par ex. "galia-weddings"
+   → l'adresse devient https://galia-weddings.netlify.app
+
+
+────────────────────────────────────────────────────────────────
+ÉTAPE 5 — Mettre à jour le site plus tard
+────────────────────────────────────────────────────────────────
+Quand tu modifies quelque chose :
+1. Retourne dans ta boîte GitHub (galia-site).
+2. Réutilise "Add file → Upload files" pour remplacer les fichiers
+   modifiés (glisse la nouvelle version, puis "Commit changes").
+3. Netlify voit le changement et republie TOUT SEUL en ~30 sec.
+
+Tu n'as plus jamais à retoucher Netlify. 😎
+
+
+────────────────────────────────────────────────────────────────
+PETITS PROBLÈMES COURANTS
+────────────────────────────────────────────────────────────────
+• "Page not found" à la racine → vérifie que "index.html" est bien
+  tout en haut de la boîte (pas rangé dans un sous-dossier).
+• Les images ne s'affichent pas → vérifie que le dossier "uploads"
+  a bien été envoyé, avec les images dedans.
+• Une adresse personnalisée (galia.com) → possible dans Netlify :
+  "Domain management → Add a domain". (Il faut acheter le domaine.)
+
+Bon lancement ! 💍

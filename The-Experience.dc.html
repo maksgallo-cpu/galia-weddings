@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:#F5F1EA;color:#1E1B17;font-family:'EB Garamond',Georgia,serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  html,body{overflow-x:hidden}
+  @media (max-width:980px){
+    header[data-nav]{flex-wrap:wrap;row-gap:14px;padding-top:16px !important;padding-bottom:16px !important}
+    header[data-nav] nav{order:3;width:100%;gap:12px 20px !important;justify-content:center}
+    header[data-nav] > div:last-child{margin-left:0 !important}
+    [style*="grid-template-columns: 1fr 1.05fr"],
+    [style*="grid-template-columns: 1fr 1.1fr"],
+    [style*="grid-template-columns: 1.05fr 1fr"],
+    [style*="grid-template-columns: 1.3fr 1fr"],
+    [style*="grid-template-columns: 80px 1fr 1.4fr"]{grid-template-columns:1fr !important}
+    [style*="grid-template-columns: repeat(4, 1fr)"],
+    [style*="grid-template-columns: repeat(3, 1fr)"]{grid-template-columns:repeat(2,1fr) !important}
+    [style*="min-height: 420px"]{min-height:320px !important}
+  }
+  @media (max-width:640px){
+    [style*="grid-template-columns: 1fr 1fr"],
+    [style*="grid-template-columns: repeat(3, 1fr)"],
+    [style*="grid-template-columns: repeat(4, 1fr)"],
+    [style*="grid-template-columns: 1.4fr 1fr 1fr"]{grid-template-columns:1fr !important}
+    [style*="min-height: 420px"]{min-height:260px !important}
+    header[data-nav] nav{gap:10px 16px !important}
+  }
+  a{color:inherit;text-decoration:none}
+  a.link-underline{position:relative}
+  a.link-underline::after{content:'';position:absolute;left:0;bottom:-3px;width:100%;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+  a.link-underline:hover::after{transform:scaleX(1)}
+  .nav-link{opacity:.72;transition:opacity .4s ease}
+  .nav-link:hover{opacity:1}
+  ::selection{background:#1E1B17;color:#F5F1EA}
+</style>
+</helmet>
+
+<div style="width:100%;overflow-x:hidden">
+
+  <header data-nav style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:22px 5vw;background:rgba(245,241,234,0.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(30,27,23,0.12)">
+    <a href="Home.dc.html" style="display:flex;align-items:center"><img src="uploads/galia-logo-dark.png" alt="Galia — Wedding Planner" style="height:38px;width:auto;display:block"></a>
+    <nav style="display:flex;gap:30px;align-items:center;font-size:12.5px;letter-spacing:0.2em;text-transform:uppercase;flex-wrap:wrap;justify-content:center">
+      <a class="nav-link" href="Home.dc.html" data-fr="Accueil">Home</a>
+      <a class="nav-link" href="The-House.dc.html" data-fr="La Maison">The House</a>
+      <a class="nav-link" href="Services.dc.html" data-fr="Services">Services</a>
+      <a class="nav-link" href="Portfolio.dc.html" data-fr="Portfolio">Portfolio</a>
+      <a class="nav-link" href="The-Experience.dc.html" style="opacity:1" data-fr="L&#39;Exp&eacute;rience">The Experience</a>
+      <a class="nav-link" href="Journal.dc.html" data-fr="Journal">Journal</a>
+      <a class="nav-link" href="Inquire.dc.html" data-fr="Contact">Inquire</a>
+    </nav>
+    <div style="display:flex;gap:8px;align-items:center;font-size:12px;letter-spacing:0.16em;margin-left:36px;flex-shrink:0">
+      <span onClick="{{ setEn }}" style="{{ enStyle }}">EN</span>
+      <span style="opacity:.35">/</span>
+      <span onClick="{{ setFr }}" style="{{ frStyle }}">FR</span>
+    </div>
+  </header>
+
+  <section style="padding:clamp(90px,15vh,170px) 6vw clamp(60px,9vh,110px);max-width:1200px;margin:0 auto;text-align:center">
+    <div data-reveal style="opacity:0;transform:translateY(18px);transition:opacity 1.3s ease,transform 1.3s ease">
+      <div style="font-size:12px;letter-spacing:0.32em;text-transform:uppercase;color:#8A8175;margin-bottom:32px" data-fr="L&rsquo;Exp&eacute;rience">The Experience</div>
+      <h1 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(36px,5.6vw,88px);line-height:1.06;margin-bottom:34px" data-fr="Une c&eacute;l&eacute;bration ne se<br>planifie pas.<br><span style=&quot;font-style:italic&quot;>Elle se compose.</span>">A celebration is not<br>simply planned.<br><span style="font-style:italic">It is composed.</span></h1>
+      <p style="font-size:clamp(17px,1.5vw,21px);line-height:1.75;color:#3A352E;max-width:52ch;margin:0 auto" data-fr="Chaque projet part d&rsquo;une page blanche et se construit autour de quatre &eacute;l&eacute;ments. C&rsquo;est notre m&eacute;thode &mdash; et ce que signifie &ecirc;tre accompagn&eacute; par GALIA.">Every project begins with a blank page and is built around four elements. This is our method &mdash; and what it means to be accompanied by GALIA.</p>
+    </div>
+  </section>
+
+  <section style="max-width:1500px;margin:0 auto;padding:0 6vw clamp(40px,6vh,80px)">
+    <div style="display:flex;flex-direction:column;border-top:1px solid rgba(30,27,23,0.16)">
+      <div data-reveal style="opacity:0;transform:translateY(18px);transition:opacity 1.3s ease,transform 1.3s ease;display:grid;grid-template-columns:80px 1fr 1.4fr;gap:clamp(20px,4vw,64px);align-items:baseline;padding:clamp(38px,5vw,68px) 0;border-bottom:1px solid rgba(30,27,23,0.16)">
+        <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(22px,2vw,30px);color:#8A8175">i</div>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(28px,3.2vw,46px)" data-fr="Le Couple">The Couple</h2>
+        <p style="font-size:clamp(16px,1.35vw,19px);line-height:1.8;color:#3A352E;max-width:52ch" data-fr="Tout commence par vous : votre histoire, votre go&ucirc;t, votre mani&egrave;re d&rsquo;&ecirc;tre ensemble. Nous &eacute;coutons avant de proposer.">Everything begins with you: your story, your taste, the way you are together. We listen before we propose.</p>
+      </div>
+      <div data-reveal style="opacity:0;transform:translateY(18px);transition:opacity 1.3s ease,transform 1.3s ease;display:grid;grid-template-columns:80px 1fr 1.4fr;gap:clamp(20px,4vw,64px);align-items:baseline;padding:clamp(38px,5vw,68px) 0;border-bottom:1px solid rgba(30,27,23,0.16)">
+        <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(22px,2vw,30px);color:#8A8175">ii</div>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(28px,3.2vw,46px)" data-fr="Le Lieu">The Place</h2>
+        <p style="font-size:clamp(16px,1.35vw,19px);line-height:1.8;color:#3A352E;max-width:52ch" data-fr="Le lieu donne le ton. Nous cherchons l&rsquo;endroit juste &mdash; un domaine, un palais, une c&ocirc;te &mdash; et le r&eacute;v&eacute;lons sans jamais le trahir.">The place sets the tone. We search for the right one &mdash; an estate, a palace, a coastline &mdash; and reveal it without ever betraying it.</p>
+      </div>
+      <div data-reveal style="opacity:0;transform:translateY(18px);transition:opacity 1.3s ease,transform 1.3s ease;display:grid;grid-template-columns:80px 1fr 1.4fr;gap:clamp(20px,4vw,64px);align-items:baseline;padding:clamp(38px,5vw,68px) 0;border-bottom:1px solid rgba(30,27,23,0.16)">
+        <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(22px,2vw,30px);color:#8A8175">iii</div>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(28px,3.2vw,46px)" data-fr="L&rsquo;Histoire">The Story</h2>
+        <p style="font-size:clamp(16px,1.35vw,19px);line-height:1.8;color:#3A352E;max-width:52ch" data-fr="Une direction artistique claire tient l&rsquo;ensemble : un concept, une palette, un rythme. Chaque d&eacute;tail appartient &agrave; une seule histoire.">A clear art direction holds it together: one concept, one palette, one rhythm. Every detail belongs to a single story.</p>
+      </div>
+      <div data-reveal style="opacity:0;transform:translateY(18px);transition:opacity 1.3s ease,transform 1.3s ease;display:grid;grid-template-columns:80px 1fr 1.4fr;gap:clamp(20px,4vw,64px);align-items:baseline;padding:clamp(38px,5vw,68px) 0;border-bottom:1px solid rgba(30,27,23,0.16)">
+        <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(22px,2vw,30px);color:#8A8175">iv</div>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(28px,3.2vw,46px)" data-fr="L&rsquo;Exp&eacute;rience">The Experience</h2>
+        <p style="font-size:clamp(16px,1.35vw,19px);line-height:1.8;color:#3A352E;max-width:52ch" data-fr="Enfin, tout devient exp&eacute;rience &mdash; pour vous et vos invit&eacute;s. Nous produisons chaque instant pour qu&rsquo;il paraisse &eacute;vident.">Finally, everything becomes experience &mdash; for you and your guests. We produce each moment so that it feels effortless.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:0 6vw clamp(90px,12vh,150px);max-width:1600px;margin:0 auto">
+    <div data-reveal style="opacity:0;transform:translateY(18px);transition:opacity 1.3s ease,transform 1.3s ease;position:relative;aspect-ratio:16/8;width:100%;overflow:hidden">
+      <image-slot id="exp-band" src="https://images.unsplash.com/photo-1595662000432-f8cdba893fa4?fm=jpg&q=80&w=1600&auto=format&fit=crop&sat=-100" credit="Yohann Libot" credit-href="https://unsplash.com/@yohannlibot" shape="rect" fit="cover" placeholder="An atmospheric image \u2014 the experience, the detail, the light"></image-slot>
+    </div>
+  </section>
+
+  <section style="background:#1E1B17;color:#F5F1EA;padding:clamp(80px,13vh,150px) 6vw;text-align:center">
+    <div data-reveal style="opacity:0;transform:translateY(18px);transition:opacity 1.3s ease,transform 1.3s ease">
+      <p style="font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:clamp(26px,3.6vw,52px);line-height:1.24;max-width:22ch;margin:0 auto 40px" data-fr="Du premier &eacute;lan au dernier adieu.">From the first idea to the final farewell.</p>
+      <a href="Inquire.dc.html" style="display:inline-block;padding:18px 46px;border:1px solid rgba(245,241,234,0.6);font-size:12px;letter-spacing:0.28em;text-transform:uppercase;color:#F5F1EA;transition:background .5s ease,color .5s ease" style-hover="background:#F5F1EA;color:#1E1B17" data-fr="Faire une demande">Inquire</a>
+    </div>
+  </section>
+
+  <footer style="background:#1E1B17;color:#F5F1EA;padding:clamp(70px,9vw,110px) 6vw 40px;border-top:1px solid rgba(245,241,234,0.16)">
+    <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px;max-width:1500px;margin:0 auto;padding-bottom:60px;border-bottom:1px solid rgba(245,241,234,0.16)">
+      <div>
+        <img src="uploads/galia-logo-white.png" alt="Galia — Wedding Planner" style="height:60px;width:auto;display:block;margin-bottom:26px">
+        <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(19px,1.8vw,26px);line-height:1.4;max-width:22ch;color:rgba(245,241,234,0.9)" data-fr="Nous n&rsquo;organisons pas des mariages. Nous composons des exp&eacute;riences.">We don&rsquo;t plan weddings. We curate experiences.</p>
+      </div>
+      <div>
+        <div style="font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:rgba(245,241,234,0.55);margin-bottom:22px" data-fr="Explorer">Explore</div>
+        <div style="display:flex;flex-direction:column;gap:13px;font-size:15px">
+          <a class="link-underline" href="The-House.dc.html" data-fr="La Maison">The House</a>
+          <a class="link-underline" href="Services.dc.html" data-fr="Services">Services</a>
+          <a class="link-underline" href="Portfolio.dc.html" data-fr="Portfolio">Portfolio</a>
+          <a class="link-underline" href="The-Experience.dc.html" data-fr="L&rsquo;Exp&eacute;rience">The Experience</a>
+          <a class="link-underline" href="Journal.dc.html" data-fr="Journal">Journal</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:rgba(245,241,234,0.55);margin-bottom:22px" data-fr="Maison">Studio</div>
+        <div style="display:flex;flex-direction:column;gap:13px;font-size:15px;color:rgba(245,241,234,0.9)">
+          <span>Paris &middot; France</span>
+          <span data-fr="Europe &middot; Moyen-Orient &middot; International">Europe &middot; Middle East &middot; Worldwide</span>
+          <a class="link-underline" href="Inquire.dc.html" style="margin-top:6px" data-fr="Faire une demande">Inquire</a>
+          <a class="link-underline" href="#" data-fr="Instagram">Instagram</a>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;max-width:1500px;margin:22px auto 0;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(245,241,234,0.5)">
+      <span>&copy; 2026 GALIA Weddings</span>
+      <span data-fr="Design &amp; direction artistique de mariages de luxe">Luxury Wedding Design &amp; Creative Direction</span>
+      <a class="link-underline" href="Credits.dc.html" data-fr="Cr&eacute;dits">Credits</a>
+      <a class="link-underline" href="https://www.adrigal.website" target="_blank" rel="noopener">Made by Adrigal</a>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { lang: 'fr' };
+  componentDidMount(){
+    let stored = 'en';
+    try { stored = localStorage.getItem('galia-lang') || 'fr'; } catch(e){}
+    this.applyLang(stored);
+    if (stored !== this.state.lang) this.setState({ lang: stored });
+    this.initReveal();
+  }
+  componentDidUpdate(){ this.applyLang(this.state.lang); }
+  applyLang(lang){
+    document.querySelectorAll('[data-fr]').forEach(el => {
+      if (el.dataset.en === undefined) el.dataset.en = el.innerHTML;
+      el.innerHTML = (lang === 'fr') ? el.dataset.fr : el.dataset.en;
+    });
+    try { document.documentElement.lang = lang; } catch(e){}
+  }
+  setLang(lang){
+    try { localStorage.setItem('galia-lang', lang); } catch(e){}
+    this.setState({ lang });
+  }
+  initReveal(){
+    const els = document.querySelectorAll('[data-reveal]');
+    if (!('IntersectionObserver' in window)) { els.forEach(el => { el.style.opacity = 1; el.style.transform = 'none'; }); return; }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = 1; e.target.style.transform = 'none'; io.unobserve(e.target); } });
+    }, { threshold: 0.08, rootMargin: '0px 0px -6% 0px' });
+    els.forEach(el => io.observe(el));
+  }
+  renderVals(){
+    const lang = this.state.lang;
+    return {
+      setEn: () => this.setLang('en'),
+      setFr: () => this.setLang('fr'),
+      enStyle: { cursor: 'pointer', opacity: lang === 'en' ? 1 : 0.4, transition: 'opacity .3s ease' },
+      frStyle: { cursor: 'pointer', opacity: lang === 'fr' ? 1 : 0.4, transition: 'opacity .3s ease' },
+    };
+  }
+}
+</script>
+</body>
+</html>
